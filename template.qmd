@@ -67,7 +67,7 @@ bibliography: bibliography.bib
 #| label: setup
 #| include: false
 library(ggplot2)
-ggplot2::theme_set(ggplot2::theme_minimal(base_size = 12))
+ggplot2::theme_set(ggplot2::theme_minimal(base_size = 10))
 
 library(knitr)
 knitr::opts_chunk$set(
@@ -81,7 +81,7 @@ knitr::opts_chunk$set(
 
 # Example Content
 
-## Raw Latex
+## Raw Latex {#sec-rawlatex}
 
 Any required LaTeX can be added to the document as required.
 For Quarto, this is best done by including the raw LaTeX inside a 
@@ -118,7 +118,6 @@ $$ {#eq-linreg}
 ## Code
 
 In-line code can be enacted with backticks, for example $1 + 1 = `r 1 + 1`$.
-
 Display code chunks are formulated in the usual Quarto way.
 
 ```{r}
@@ -134,7 +133,8 @@ sprintf("10! = %i", factorial(10))
 
 ## Images
 
-We can include graphics that already exist with
+We can include graphics that already exist with `knitr::include_graphics`
+  or by `\includegraphics` using the method described in @sec-rawlatex.
 
 ```{r}
 knitr::include_graphics("https://quarto.org/quarto.png")
@@ -147,16 +147,16 @@ Note that we only change `fig.width` and `fig.height` or `fig.asp`;
 ```{r}
 #| label: fig-cars
 #| fig-cap: "A scatter plot of weight and MPG from the `mtcars` dataset"
-#| fig-asp: 0.5
+#| fig-asp: 0.8
 #| echo: false
 mtcars |> 
   ggplot2::ggplot(ggplot2::aes(x = mpg, y = wt)) +
-  ggplot2::geom_point() +
   ggplot2::geom_smooth(method = "lm", formula = y ~ x, colour = "red") +
+  ggplot2::geom_point() +
   ggplot2::labs(
     title = "Negative Correlation between Weight and MPG",
     y = "Weight",
-    x = "Mile per Gallon (MPG)"
+    x = "Miles per Gallon (MPG)"
   )
 ```
 
@@ -192,11 +192,38 @@ Here is a footnote reference,[^1] and another.[^longnote]
 
     Multi-paragraph footnotes work like multi-paragraph list items.
 
+## Quotes
+
+The `quote` environment is supplied by the Markdown quote syntax where lines
+  begin with `>`.
+For example,
+
+> The combination of some data and an aching desire for an answer does not
+> ensure that a reasonable answer can be extracted from a given body of data.
+> 
+> -- John Tukey
+
+\newpage
+
+# Future Work
+
+## NJD Consistency
+
+Wiley's NJD supplies
+
+* 2 column layouts, only 1 column layouts apply here.
+
+* Multiple referencing systems, only Harvard applies here.
+
+* Font options (Helvetica, Lato, etc.) but installing fonts is non-trivial.
+  Currently Times is used but we may want sans-serif.
+
+
 ## Theorems
 
-Not currently tested.
+Custom environments supplied by NJD should work with Quarto divs, however
+  further testing is required.
 
-<!--
 ::: {#thm-1}
 This is a theorem.
 :::
@@ -212,7 +239,8 @@ This is a proposition.
 ::: {#def-1}
 This is a definition
 :::
--->
+
+\newpage
 
 # References
 
