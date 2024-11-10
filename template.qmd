@@ -91,7 +91,7 @@ For Quarto, this is best done by including the raw LaTeX inside a
 \setlength{\parindent}{0pt}
 ```
 
-## Equations
+## Equations {#sec-eqns}
 
 As with LaTeX, we can create in-line equations with $y = mx + c$ and create
   display single-line equations with
@@ -164,7 +164,7 @@ mtcars |>
 
 We want to be able to reference already defined items such as
 
-1. linear regression, as described in (@eq-linreg).
+1. linear regression, as described in (@eq-linreg) from @sec-eqns.
 
 1. scatter plot of `mtcars` data, @fig-cars.
 
