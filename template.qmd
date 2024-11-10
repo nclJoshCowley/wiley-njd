@@ -1,7 +1,8 @@
 ---
-title: "Wiley NJD"
+title: "Wiley NJD - Example Document"
 format:
-  wiley-njd-pdf
+  wiley-njd-pdf:
+    default
 bibliography: bibliography.bib
 ---
 
@@ -14,12 +15,12 @@ ggplot2::theme_set(ggplot2::theme_minimal(base_size = 12))
 ```
 
 
-## Purpose
+# Purpose
 
 Supplies examples of template functionality within Quarto.
 
 
-### Equations
+## Equations
 
 As with LaTeX, we can create in-line equations with $y = mx + c$ and create
   display single-line equations with
@@ -44,7 +45,7 @@ $$
 $$ {#eq-linreg}
 
 
-### Code
+## Code
 
 In-line code can be enacted with backticks, for example $1 + 1 = `r 1 + 1`$.
 
@@ -62,7 +63,7 @@ sprintf("10! = %i", factorial(10))
 ```
 
 
-### Images
+## Images
 
 We can include graphics that already exist with
 
@@ -88,7 +89,7 @@ mtcars |>
 ```
 
 
-### Cross-Reference
+## Cross-Reference
 
 We want to be able to reference already defined items such as
 
@@ -97,7 +98,7 @@ We want to be able to reference already defined items such as
 1. scatter plot of `mtcars` data, @fig-cars.
 
 
-### Citations
+## Citations
 
 We can cite is a few different ways that are consistent with `natbib`
 
@@ -109,7 +110,7 @@ Multiple citations follow usual Quarto syntax and are split by a semi-colon
   [@Hirt1974; @Benson1992; @Dukowicz1984].
 
 
-### Footnotes
+## Footnotes
 
 Here is a footnote reference,[^1] and another.[^longnote]
 
@@ -123,7 +124,7 @@ Here is a footnote reference,[^1] and another.[^longnote]
     Multi-paragraph footnotes work like multi-paragraph list items.
 
 
-### Theorems
+## Theorems
 
 Not currently tested.
 
@@ -146,7 +147,7 @@ This is a definition
 -->
 
 
-## References
+# References
 
 ::: {#refs}
 :::

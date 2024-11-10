@@ -1,0 +1,47 @@
+\documentclass[Harvard,Times1COL]{WileyNJDv5} %STIX1COL,STIX2COL,STIXSMALL
+
+\usepackage{natbib}
+\bibliographystyle{wileyNJD-Harvard}
+
+\hypersetup{hidelinks}
+
+% LaTeX required by document converter Pandoc ----
+$pandoc.tex()$
+% End of LaTeX required by document converter Pandoc ----
+
+\articletype{Article Type}%
+
+\received{Date Month Year}
+\revised{Date Month Year}
+\accepted{Date Month Year}
+\journal{Journal}
+\volume{00}
+\copyyear{2023}
+\startpage{1}
+\endpage{10}
+
+\raggedbottom
+
+
+\begin{document}
+
+\title{Please insert your article title here}
+
+\author[1]{Mark Taylor}
+
+\author[2,3]{Author Two}
+
+\author[3]{Author Three}
+
+\abstract[Abstract]{This is a generic template designed for use by multiple journals,
+which includes several options for customization. Please
+refer the author guidelines and author LaTeX manuscript preparation document for the journal to which you
+are submitting in order to confirm that your manuscript will
+comply with the journal's requirements. Please replace this
+text with your abstract. This is sample abstract text just for the template display purpose.}
+
+\maketitle
+
+$body$
+
+\end{document}
