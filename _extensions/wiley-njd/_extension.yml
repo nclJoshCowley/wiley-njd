@@ -17,6 +17,10 @@ contributes:
       copy-year: 2024
       start-page: 1
 
+      # Marks used in header
+      titlemark: ""
+      authormark: ""
+
       # Placeholder Abstract
       abstract: |
         Replace this placeholder abstract by defining the 'abstract' option

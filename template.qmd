@@ -12,6 +12,9 @@ format:
     copy-year: 2024
     start-page: 1024
 
+    titlemark: "Short Title (in header)"
+    authormark: "Short Author (in header)"
+
     abstract: |
       Document serves as example input for Quarto template openly available
         from Github, see more information at
@@ -22,6 +25,7 @@ format:
         the build process, usage is subject to any license associated with
         original template.
 
+    keep-tex: true
     bibliography: bibliography.bib
 ---
 
@@ -30,9 +34,28 @@ format:
 #| include: false
 library(ggplot2)
 ggplot2::theme_set(ggplot2::theme_minimal(base_size = 12))
+
+library(knitr)
+knitr::opts_chunk$set(
+  echo = FALSE,
+  message = FALSE,
+  # Example journal specifications: (width: 17.15 cm, DPI: >= 300)
+  fig.width = 17.15 / 2.54,
+  dpi = 300
+)
 ```
 
 # Example Content
+
+## Raw Latex
+
+Any required LaTeX can be added to the document as required.
+For Quarto, this is best done by including the raw LaTeX inside a 
+  ` ```{=latex} ... ``` ` block, as shown in the source document.
+
+```{=latex}
+\setlength{\parindent}{0pt}
+```
 
 ## Equations
 
@@ -58,7 +81,6 @@ $$
 \end{aligned}
 $$ {#eq-linreg}
 
-
 ## Code
 
 In-line code can be enacted with backticks, for example $1 + 1 = `r 1 + 1`$.
@@ -76,7 +98,6 @@ For example, output is suppressed via the chunk option `#| echo: false`.
 sprintf("10! = %i", factorial(10))
 ```
 
-
 ## Images
 
 We can include graphics that already exist with
@@ -85,11 +106,14 @@ We can include graphics that already exist with
 knitr::include_graphics("https://quarto.org/quarto.png")
 ```
 
-And we can generate our own plots using R code
+And we can generate our own plots using R code.
+Note that we only change `fig.width` and `fig.height` or `fig.asp`;
+  changing `out.height` or `out.width` will stretch the image.
 
 ```{r}
 #| label: fig-cars
 #| fig-cap: "A scatter plot of weight and MPG from the `mtcars` dataset"
+#| fig-asp: 0.5
 #| echo: false
 mtcars |> 
   ggplot2::ggplot(ggplot2::aes(x = mpg, y = wt)) +
@@ -102,7 +126,6 @@ mtcars |>
   )
 ```
 
-
 ## Cross-Reference
 
 We want to be able to reference already defined items such as
@@ -111,18 +134,16 @@ We want to be able to reference already defined items such as
 
 1. scatter plot of `mtcars` data, @fig-cars.
 
-
 ## Citations
 
 We can cite is a few different ways that are consistent with `natbib`
 
-1. Parenthesised citation, using a `citep` equivalent [@Hirt1974].
+1. Parenthesised citation, using `citep` [@Hirt1974].
 
-1. Textual citation, using a `citet` equivalent like @Hirt1974.
+1. Textual citation, using `citet` as in @Hirt1974.
 
-Multiple citations follow usual Quarto syntax and are split by a semi-colon
+Multiple citations follow (semi-colon separated) Quarto syntax
   [@Hirt1974; @Benson1992; @Dukowicz1984].
-
 
 ## Footnotes
 
@@ -136,7 +157,6 @@ Here is a footnote reference,[^1] and another.[^longnote]
     footnote.
 
     Multi-paragraph footnotes work like multi-paragraph list items.
-
 
 ## Theorems
 
@@ -159,7 +179,6 @@ This is a proposition.
 This is a definition
 :::
 -->
-
 
 # References
 
