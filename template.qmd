@@ -15,18 +15,47 @@ format:
     titlemark: "Short Title (in header)"
     authormark: "Short Author (in header)"
 
-    abstract: |
-      Document serves as example input for Quarto template openly available
-        from Github, see more information at
-        <https://github.com/nclJoshCowley/wiley-njd>.
-      All rendering requires LaTeX to be installed, this includes any 
-        TeX installation bundled with Quarto.
-      Since Wiley's "New Journal Design" (NJD) LaTeX template is utilised in
-        the build process, usage is subject to any license associated with
-        original template.
+author:
+  - name: Josh Cowley
+    email: joshcowley@fakeemails.com
+    corresponding: true
+    affiliations:
+      - name: That University
+        department: School of Something
+        city: City
+        country: UK
 
-    keep-tex: true
-    bibliography: bibliography.bib
+  - name: The Supervisor
+    email: thesupervisor@fakeemails.com
+    affiliations:
+      - name: That University
+        department: School of Something
+        city: City
+        country: UK
+
+  - name: Business Contact
+    email: businesscontact@fakebusinessemails.com
+    affiliations:
+      - name: That Company
+        department: Advanced Department
+        city: City
+        country: Germany
+
+present-address: |
+  The present address is currently hidden.
+
+abstract: |
+  Document serves as example input for Quarto template openly available
+    from Github, see more information at
+    <https://github.com/nclJoshCowley/wiley-njd>.
+  All rendering requires LaTeX to be installed, this includes any 
+    TeX installation bundled with Quarto.
+  Since Wiley's "New Journal Design" (NJD) LaTeX template is utilised in
+    the build process, usage is subject to any license associated with
+    original template.
+
+keep-tex: true
+bibliography: bibliography.bib
 ---
 
 ```{r}
