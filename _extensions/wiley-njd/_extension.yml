@@ -7,15 +7,49 @@ contributes:
     pdf:
       template: "wiley-njd-pdf.tex"
 
+      # Template Parameters
+      article-type: "Example Article Type"
+      received: "Date Month Year"
+      revised: "Date Month Year"
+      accepted: "Date Month Year"
+      journal: "Example Journal"
+      volume: "00"
+      copy-year: 2024
+      start-page: 1
+
+      # Placeholder Abstract
+      abstract: |
+        Replace this placeholder abstract by defining the 'abstract' option
+        in the Quarto document YAML.
+        For more information, see the example included with this template.
+
+
+      # Setup for hyperref LaTeX package
+      colorlinks: true
+      linkcolor: blue
+      citecolor: blue
+      filecolor: black
+      urlcolor: black
+
+      # Citations
       biblio-style: wileyNJD-Harvard.bst
       cite-method: natbib
 
+      # Template Partials
+      template-partials:
+        - partials/pandoc.tex
+        - partials/citations.tex
+        - partials/title.tex
+        - partials/title-correspondence.tex
+
+      # Template dependencies
       format-resources:
         - resources/WileyNJDv5.cls
         - resources/lettersp.sty
         - resources/NJDnatbib.sty
         - resources/wileyNJD-Harvard.bst
 
+      # Quarto-to-LaTeX Options
       fig-pos: "h"
       crossref:
         eq-prefix: ""
