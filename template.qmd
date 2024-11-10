@@ -14,6 +14,11 @@ format:
 
     titlemark: "Short Title (in header)"
     authormark: "Short Author (in header)"
+    
+    keywords:
+      - keyword1
+      - buzzword
+      - keyword3
 
 author:
   - name: Josh Cowley

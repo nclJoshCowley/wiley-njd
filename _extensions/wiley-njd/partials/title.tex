@@ -23,4 +23,8 @@ $if(abstract)$
 \abstract[Abstract]{$abstract$}
 $endif$
 
+$if(keywords)$
+{\keywords{$for(keywords)$$it$$sep$, $endfor$}
+$endif$
+
 \maketitle
