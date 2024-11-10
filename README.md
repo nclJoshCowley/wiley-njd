@@ -1,5 +1,4 @@
-
-# <%= title %>
+# Wiley's New Journal Design (NJD) in Quarto
 
 ## Purpose
 
