@@ -7,6 +7,10 @@ contributes:
     pdf:
       template: "wiley-njd-pdf.tex"
 
+      # Lua filter to ignore out.width and out.height
+      filters:
+        - ignore-out-width-height.lua
+
       # Template Parameters
       article-type: "Example Article Type"
       received: "Date Month Year"
