@@ -353,7 +353,8 @@
 \LoadClass[twoside,fleqn,onecolumn]{article}%
 
 \usepackage{etex}%
-\reserveinserts{28}% included etex package and \reserveinserts{...} to avoid no room for \newinserts, \newcounts or \newskips etc.
+% @nclJoshCowley -- Ignoring this line to avoid error in 2025. See https://www.tug.org/TUGboat/tb36-3/tb114ltnews23.pdf
+% \reserveinserts{28}% included etex package and \reserveinserts{...} to avoid no room for \newinserts, \newcounts or \newskips etc.
 \RequirePackage{graphicx,multicol}%
 \RequirePackage{multirow}%
 \RequirePackage{cuted}%
